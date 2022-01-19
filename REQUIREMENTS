@@ -1,0 +1,76 @@
+#scripts:
+-----------------
+Developing: npm run start
+Building: npm run build
+a starter app : npm run dev
+testing: npm run test
+
+-------------------------
+##connect to the database:
+------------------------
+connect to database => psql -U postgres
+create the project database => CREATE DATABASE postgres /postgres_test
+create tables => CREATE TABLE users , products , orders , order_products
+connect to the project database => \c postgres/postgres_test
+--------------------------------------------------
+###.env
+----------
+POSTGRES_HOST=localhost
+POSTGRES_DB=postgres
+POSTGRES_USER=postgres
+POSTGRES_PORT = 5432
+POSTGRES_PASSWORD=shaimaa
+POSTGRES_DB_TEST=postgres_test
+ENV=dev
+
+BCRYPT_PASSWORD=speak-friend-and-enter
+SALT_ROUNDS=10
+TOKEN_SECRET=your-secret-token
+----------------------------------
+
+
+### API Endpoints
+#### Products
+- Index GET:http://localhost:3000/products
+- Show  GET:http://localhost:3000/products/id
+- Create POST:http://localhost:3000/products
+
+#### Users
+- Index  GET:http://localhost:3000/users
+- Show   GET:http://localhost:3000/users/id
+- Create POST:http://localhost:3000/users
+
+#### Orders
+- GET:http://localhost:3000/orders
+
+##### Order_products
+
+- POST:http://localhost:3000/service/addProduct
+
+## Data Shapes
+
+#### Product
+-  id
+- product_name
+- price
+
+
+#### User
+- id
+- firtName
+- lastName
+- pwd
+
+#### Orders
+- id
+- user_id
+- status
+
+##### Order_products
+- id
+- order_id
+- product_id
+- quantity
+
+
+
